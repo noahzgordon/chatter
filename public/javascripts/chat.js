@@ -8,4 +8,11 @@
   Chat.prototype.sendMessage = function(data) {
     this.socket.emit("message", { text: data.text });
   };
+
+  Chat.prototype.processCommand = function(data) {
+    var spaceIndex = data.text.indexOf(" ");
+    if (data.text.substring(1, spaceIndex) === "nick") {
+      this.socket.emit("nicknameChangeRequest", data)
+    }
+  }
 })();
