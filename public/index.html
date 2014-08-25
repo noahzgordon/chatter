@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- JQuery Library -->
+    <script src="javascripts/jquery-1.11.1.js"
+            type="text/javascript"
+            charset="utf-8">
+    </script>
+    <!-- JSON.serialize Library -->
+    <script src="javascripts/jquery.serializejson.js"
+            type="text/javascript"
+            charset="utf-8">
+    </script>
+    <!-- Websocket Library -->
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- Chat Constructor File -->
+    <script src="javascripts/chat.js"
+            type="text/javascript"
+            charset="utf-8">
+    </script>
+    <!-- Chat UI Constructor File -->
+    <script src="javascripts/chat_ui.js"
+            type="text/javascript"
+            charset="utf-8">
+    </script>
+
+  </head>
+
+  <body>
+    <h1>Chat App</h1>
+    <section class="container">
+      <ul class="chat"></ul>
+
+      <form class="new-message">
+        <label for="new-message-text">New Message</label>
+        <input type="text" id="new-message-text" name="text"></input><br>
+        <input type="submit">
+      </form>
+    </section>
+
+    <script>
+      $(document).ready(function() {
+        var socket = io('http://localhost');
+        var chat = new ChatApp.Chat(socket);
+        var ui = new ChatApp.ChatUI(chat, $('.container'));
+      })
+    </script>
+  </body>
+
+</html>
