@@ -13,6 +13,10 @@
     var spaceIndex = data.text.indexOf(" ");
     if (data.text.substring(1, spaceIndex) === "nick") {
       this.socket.emit("nicknameChangeRequest", data)
+    } else if (data.text.substring(1, spaceIndex) === "join") {
+      this.socket.emit("roomChangeRequest", {
+        room: data.text.substring(spaceIndex+1)
+      });
     }
   }
 })();

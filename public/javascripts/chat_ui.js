@@ -12,6 +12,7 @@
     this.chat.socket.on('nicknameChangeResult', ui.renderMessage.bind(ui))
     this.$el.find("form.new-message").on("submit", ui.getMessage.bind(ui));
     this.chat.socket.on('nicknamesUpdate', ui.renderNicknames.bind(ui));
+    this.chat.socket.on('roomList', ui.renderRoomList.bind(ui));
   }
 
   ChatUI.prototype.getMessage = function(event) {
@@ -41,6 +42,17 @@
     Object.keys(data.nicknames).forEach(function(key) {
       $li = $("<li>").text(data.nicknames[key]);
       that.$el.find("ul.users").append($li);
+    });
+  }
+
+  ChatUI.prototype.renderRoomList = function(data) {
+    this.$el.find("ul.room-users").empty();
+    var $li;
+    var that = this;
+
+    data.roomUsers.forEach(function(user) {
+      $li = $("<li>").text(user);
+      that.$el.find("ul.room-users").append($li);
     });
   }
 
