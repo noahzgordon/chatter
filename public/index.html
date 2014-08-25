@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Styles -->
+    <link rel="stylesheet" href="./stylesheets/styles.css">
     <!-- JQuery Library -->
     <script src="javascripts/jquery-1.11.1.js"
             type="text/javascript"
@@ -23,33 +25,40 @@
             type="text/javascript"
             charset="utf-8">
     </script>
-
   </head>
 
   <body>
     <h1>Chat App</h1>
 
-    <section class="container">
-      <h3>Connected Users</h3>
-      <ul class="users">
-      </ul>
+    <section class="container group">
+      <section class="user-tab group">
+        <h3>Connected Users</h3>
+        <ul class="users">
+        </ul>
 
-      <h3>In This Room</h3>
-      <ul class="room-users">
-      </ul>
+        <h3>In This Room</h3>
+        <ul class="room-users group">
+        </ul>
+      </section>
 
-      <ul class="chat"></ul>
+      <section class="chat-tab">
+        <ul class="chat"></ul>
 
-      <form class="new-message">
-        <label for="new-message-text">New Message</label>
-        <input type="text" id="new-message-text" name="text"></input><br>
-        <input type="submit">
-      </form>
+        <form class="new-message">
+          <label for="new-message-text">New Message</label>
+          <input type="text"
+                 id="new-message-text"
+                 name="text">
+          </input>
+          <br>
+          <input type="submit">
+        </form>
+      </section>
     </section>
 
     <script>
       $(document).ready(function() {
-        var socket = io('http://localhost');
+        var socket = io('http://10.0.1.102:8000');
         var chat = new ChatApp.Chat(socket);
         var ui = new ChatApp.ChatUI(chat, $('.container'));
       })

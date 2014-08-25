@@ -1,0 +1,122 @@
+/* RESETS */
+
+html, body, h1, h3, ul, li, section, form, input, label {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font: inherit;
+}
+
+h1, h3, li, input, label {
+  font-family: Verdana, sans-serif;
+}
+
+input {
+  -webkit-appearance: none;
+  display: inline-block;
+  box-sizing: content-box;
+  outline: 0;
+  width: auto;
+  vertical-align: baseline;
+  background: transparent;
+  color: inherit;
+}
+
+input[type="submit"] {
+  display: inline;
+  cursor: pointer;
+}
+
+ul, li {
+  list-style: none;
+}
+
+/* CLEARFIX */
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* STYLES */
+
+body {
+  background: #ddd;
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+  margin: 30px;
+}
+
+h3 {
+  font-size: 20px;
+  margin: 5px;
+}
+
+section.container {
+  position: relative;
+  width: 900px;
+  margin: auto;
+  background: #eee;
+  padding: 50px;
+  border-radius: 10px;
+  min-height: 500px;
+}
+
+section.chat-tab {
+  display: block;
+  float: left;
+  width: 500px;
+  margin: 30px;
+}
+
+section.user-tab {
+  display: block;
+  float: right;
+  width: 300px;
+  background: #777;
+  border-radius: 5px;
+  color: #ddd;
+  padding: 20px;
+  min-height: 400px;
+}
+
+.user-tab ul {
+  margin: 10px;
+}
+
+.chat-tab li {
+  margin: 5px;
+}
+
+.chat-tab form {
+  padding: 20px 0;
+}
+
+.chat-tab input[type=submit] {
+  display: none;
+}
+
+.chat-tab input[type=text] {
+  border-bottom: 2px solid #ddd;
+  width: 160px;
+  margin-left: 10px;
+  padding-left: 3px;
+}
+
+.chat-tab form {
+  background: #777;
+  color: #ddd;
+  width: 300px;
+  margin: 20px 0;
+  border-radius: 5px;
+  padding: 10px;
+  padding-right: 0;
+}
+
+
+
+

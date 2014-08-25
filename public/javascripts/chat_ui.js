@@ -5,7 +5,6 @@
     this.chat = chat;
     this.$el = $el;
     this.nicknames = {};
-    console.log(this.chat.socket)
 
     var ui = this;
     this.chat.socket.on('message', ui.renderMessage.bind(ui));
