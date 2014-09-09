@@ -1,6 +1,4 @@
 ##Chatter
-=======
-
 A simple chat application built in node.js.
 
 ###Features and Technologies
