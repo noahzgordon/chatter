@@ -58,7 +58,7 @@
 
     <script>
       $(document).ready(function() {
-        var socket = io('http://localhost:8000');
+        var socket = io('http://chatter-nzg.herokuapp.com/');
         var chat = new ChatApp.Chat(socket);
         var ui = new ChatApp.ChatUI(chat, $('.container'));
       })
